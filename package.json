@@ -1,0 +1,19 @@
+{
+  "name": "create-backwrap-app",
+  "version": "1.0.0",
+  "description": "backwrap tool to create a backwrap app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npx",
+    "create-backwrap-app",
+    "backwrap"
+  ],
+  "author": "Oluwayimika Oladipupo",
+  "license": "ISC",
+  "bin": {
+    "create-backwrap-app": "bin/index.js"
+  }
+}
