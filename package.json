@@ -12,7 +12,7 @@
     "backwrap"
   ],
   "author": "Oluwayimika Oladipupo",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "create-backwrap-app": "bin/index.js"
   }
