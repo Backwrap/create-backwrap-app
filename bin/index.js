@@ -28,6 +28,7 @@ readline.question("Name of the app: ", (path) => {
                 response.push(dets);
                 fs.writeFile("apps.json", JSON.stringify(response), (err) => {
                   if (err) console.log(err);
+                  else console.log(`apps.json updated.`)
                 });
                 // let format = `\n\nconst ${path}Router = require("./${path}/index")\nmodule.exports = ${path}`;
                 let format = `\t`;
