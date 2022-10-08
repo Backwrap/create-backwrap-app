@@ -6,8 +6,11 @@
 - **Describe** the app
 - Enter your **github** profile link
 
+## Note
+**The package is specifically for the backwrap package**
+
 # Contact
-Please join our [Discord](https://discord.gg/2cxcmcu6PN) channel
+Join our [Discord](https://discord.gg/2cxcmcu6PN) channel
 
 # :key: LICENSE
 This project is licensed with `MIT`

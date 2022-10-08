@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Backwrap/create-backwrap-app"
+  },
   "keywords": [
     "npx",
     "create-backwrap-app",
     "backwrap"
   ],
   "author": "Oluwayimika Oladipupo",
-  "license": "MIT",
+  "license": "MIT license",
   "bin": {
     "create-backwrap-app": "bin/index.js"
   }
