@@ -9,7 +9,7 @@ const readline = require("readline").createInterface({
 readline.question("Name of the app: ", (path) => {
   readline.question("Description of the app: ", (description) => {
     readline.question("Link to author's git repository: ", (github) => {
-      fs.access(`${__dirname}/Apps/${path}`, (error) => {
+      fs.access(`Apps/${path}`, (error) => {
         // To check if the given directory
         // already exists or not
         if (error) {
@@ -28,6 +28,7 @@ readline.question("Name of the app: ", (path) => {
                 response.push(dets);
                 fs.writeFile("apps.json", JSON.stringify(response), (err) => {
                   if (err) console.log(err);
+                  else console.log(`apps.json updated.`)
                 });
                 // let format = `\n\nconst ${path}Router = require("./${path}/index")\nmodule.exports = ${path}`;
                 let format = `\t`;

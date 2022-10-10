@@ -16,7 +16,11 @@
     "backwrap"
   ],
   "author": "Oluwayimika Oladipupo",
-  "license": "MIT license",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Backwrap/create-backwrap-app/issues"
+  },
+  "homepage": "https://github.com/Backwrap/create-backwrap-app#readme",
   "bin": {
     "create-backwrap-app": "bin/index.js"
   }
