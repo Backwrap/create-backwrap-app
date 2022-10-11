@@ -1,6 +1,6 @@
 {
   "name": "create-backwrap-app",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "backwrap tool to create a backwrap app",
   "main": "index.js",
   "scripts": {
