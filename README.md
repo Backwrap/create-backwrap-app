@@ -1,8 +1,7 @@
 # :tada: Welcome to create-backwrap-app
 
 # Usage
-- `npx create-backwrap-app`
-- Enter name of the **app** you want to create
+- `npx create-backwrap-app <app-name>`
 - **Describe** the app
 - Enter your **github** profile link
 
