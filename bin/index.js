@@ -5,8 +5,9 @@ const readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-readline.question("Name of the app: ", (path) => {
+const path = process.argv.slice(2)[0];
+if (path) {
+  // readline.question("Name of the app: ", (path) => {
   readline.question("Description of the app: ", (description) => {
     readline.question("Link to author's git repository: ", (github) => {
       fs.access(`Apps/${path}`, (error) => {
@@ -28,7 +29,7 @@ readline.question("Name of the app: ", (path) => {
                 response.push(dets);
                 fs.writeFile("apps.json", JSON.stringify(response), (err) => {
                   if (err) console.log(err);
-                  else console.log(`apps.json updated.`)
+                  else console.log(`apps.json updated.`);
                 });
                 // let format = `\n\nconst ${path}Router = require("./${path}/index")\nmodule.exports = ${path}`;
                 let format = `\t`;
@@ -49,11 +50,37 @@ readline.question("Name of the app: ", (path) => {
                 secFormat += `}`;
                 fs.appendFile("Apps/index.js", secFormat, (err) => {
                   if (err) console.log(err);
+                  else {
+                    console.log(`Apps/index.js updated`);
+                  }
+                });
+                const datas = `\n${path}URI = mongodb+srv://backwrap:backwrap@cluster0.w1bdsly.mongodb.net/${path}?retryWrites=true&w=majority`;
+                fs.appendFile(".env", datas, (err) => {
+                  if (err) console.log(err);
+                  else {
+                    console.log(`.env updated`);
+                  }
                 });
               });
-              const details = `const ${path}Router = require("express").Router()\n\nmodule.exports = ${path}Router`;
+              const details = `const ${path}Router = require("express").Router()
+const mongoose = require("mongoose");
+require("dotenv").config({path: require("find-config")(".env")})
+
+const ${path}URI = process.env.${path}URI;
+mongoose.connect(${path}URI, (err) => {
+  if(err) {
+    console.log("Error connecting to the ${path} database");
+  } else {
+    console.log("Connected to the ${path} databese")
+  }
+});
+
+module.exports = ${path}Router`;
               fs.writeFile(`Apps/${path}/index.js`, details, function (err) {
                 if (err) throw err;
+                else {
+                  console.log(`Apps/${path}/index.js created`);
+                }
               });
               console.log(`Apps/${path} has been created`);
               const pattern = {
@@ -79,7 +106,12 @@ readline.question("Name of the app: ", (path) => {
           console.log(`${path} already exist`);
         }
         readline.close();
+        // process.exit(0);
       });
     });
   });
-});
+  // });
+} else {
+  console.log(`create-backwrap-app takes one argument`);
+  process.exit(1);
+}
