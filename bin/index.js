@@ -66,7 +66,7 @@ if (path) {
 const mongoose = require("mongoose");
 require("dotenv").config({path: require("find-config")(".env")})
 
-const ${path}URI = process.env.${path}URI;
+const ${path}URI = process.env.${path}URI || "";
 mongoose.connect(${path}URI, (err) => {
   if(err) {
     console.log("Error connecting to the ${path} database");
